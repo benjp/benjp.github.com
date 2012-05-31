@@ -37,8 +37,6 @@
 	
   </head>
   <body>
-
-
   
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -52,7 +50,6 @@
 
         <div class="span9" id="main-container">
         </div><!--/span-->
-        
 
         <div class="span3">
           <div id="sidebar-categories">
@@ -61,17 +58,10 @@
           <div id="sidebar-nav">
           </div><!--/span-->  
         </div>
-
-        
-        
-        
+          
       </div><!--/row-->
 
-
     </div><!--/.fluid-container-->
-
-
-
 
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/mustache.js"></script>
@@ -79,41 +69,7 @@
     <script src="js/bootstrap-collapse.js"></script>
     <script src="js/bootstrap-transition.js"></script>
     <script src="js/bootstrap-dropdown.js"></script>
-    <!--
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
-    -->
-
-    <script>
-      
-      $.getJSON('json/sidebar-nav.json', function(data) {
-        var html = Mustache.to_html(sidebarNavTpl, data);
-        $('#sidebar-nav').html(html);
-      });    
-      
-      $.getJSON('json/sidebar-categories.json', function(data) {
-        var html = Mustache.to_html(sidebarNavTpl, data);
-        $('#sidebar-categories').html(html);
-      });    
-      
-      $.getJSON('json/nav-collapse.json', function(data) {
-        var html = Mustache.to_html(navCollapseTpl, data);
-        $('#nav-collapse').html(html);
-      }); 
-
-      $.get('html/index.html', function(data) {
-        $('#main-container').html(data);
-      });
-                             
-    </script>
-
+    <script src="js/main.js"></script>
 
   </body>
 </html>
