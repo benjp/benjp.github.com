@@ -1,0 +1,19 @@
+{
+  "nav": [
+    {
+      "title": "My links",
+      "links": [ {"title": "GitHub", "href": "https://github.com/benjp"},
+                 {"title": "LinkedIn", "href": "http://www.linkedin.com/profile/view?id=63327682"},
+                 {"title": "Run Activity Feed", "href": "http://connect.garmin.com/feed/rss/activities?feedname=Garmin%20Connect%20-%20benjamin.paillereau&owner=benjamin.paillereau"},
+                 {"title": "Twitter", "href": "http://www.twitter.com/bpaillereau"},
+                 {"title": "Vimeo", "href": "http://www.vimeo.com/user1241097"}
+                ]
+    },
+    {
+      "title": "Friends",
+      "links": [ {"title": "tugdualgrall.blogspot", "href": "http://tugdualgrall.blogspot.com/"},
+                 {"title": "julienviet.com", "href": "http://www.julienviet.com/"}
+                ]
+    }    
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Ben's Blog",
+  "links": [
+    {"title": "Home", "href": "index", "active": true},
+    {"title": "About Me", "href": "aboutme"},
+    {"title": "Contact", "href": "contact"}
+    ]
+}

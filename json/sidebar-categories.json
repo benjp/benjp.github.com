@@ -1,0 +1,11 @@
+{
+  "nav": [
+    {
+      "title": "Categories",
+      "links": [ {"title": "eXo", "href": "#eXo"},
+                 {"title": "Java", "href": "#Java"},
+                 {"title": "Juzu", "href": "#Juzu"}
+                ]
+    }    
+  ]
+}
