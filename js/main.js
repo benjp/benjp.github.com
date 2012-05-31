@@ -16,3 +16,4 @@ $.getJSON('json/sidebar-categories.json', function(data) {
   var html = Mustache.to_html(sidebarNavTpl, data);
   $('#sidebar-categories').html(html);
 });    
+

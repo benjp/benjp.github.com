@@ -1,0 +1,36 @@
+{{mustache}}
+<div class="hero-unit">
+
+{{#une}}  
+  <div class="row-fluid">
+    <div class="span4">
+      <a href="#" class="thumbnail">
+        <img src="{{img}}" alt="Une thumbnail">
+      </a>
+    </div>
+    <div class="span8">
+      <h2>{{title}}</h2>
+      <p>{{desc}}</p>
+      <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    </div>
+  </div>
+</div>
+{{/une}}
+
+<div class="row-fluid">
+
+{{#articles}}
+  <div class="span4">
+    <h2>{{title}}</h2>
+    <p>{{desc}}</p>
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div><!--/span-->
+
+  {{#newline}}
+</div><!--/row-->
+<div class="row-fluid">
+  {{/newline}}  
+
+{{/articles}}
+
+</div><!--/row-->
