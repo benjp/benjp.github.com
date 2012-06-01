@@ -36,19 +36,31 @@ $.address.change(function(event){
   if (anchor=="") anchor = "index";
   if (anchor.startsWith('article')) {
     var id = anchor.substring(anchor.indexOf("_")+1);
-    $.get('contents/'+id+'.html', function(data) {
+
+    $('#main-container').fadeOut(100, function() {
+      $.get('contents/'+id+'.html', function(data) {
+        $('#main-container').html(data);
+        $('#main-container').fadeIn(100, function() {
+      
+        });  
+      });
+    
+    });  
+
+
+/*    $.get('contents/'+id+'.html', function(data) {
       $('#main-container').html(data);
-    });      
+    });      */
   }
 
   if (anchor == 'aboutme' || anchor == 'contact' || anchor == 'index' ) {
 
     $('#nav-'+anchor).addClass('active');
 
-    $('#main-container').fadeOut('fast', function() {
+    $('#main-container').fadeOut(100, function() {
       $.get('html/'+anchor+'.html', function(data) {
         $('#main-container').html(data);
-        $('#main-container').fadeIn('fast', function() {
+        $('#main-container').fadeIn(100, function() {
       
         });  
       });
