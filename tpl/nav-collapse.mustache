@@ -5,45 +5,14 @@
   <span class="icon-bar"></span>
 </a>
 
-<a class="brand" href="http://localhost:8888/benjp.github.com/">{{title}}</a>
+<a class="brand" href="#index">{{title}}</a>
 
 <div class="nav-collapse">
   <ul class="nav">
     {{#links}}
-    <li {{#active}}class="active"{{/active}}><a href="#{{href}}">{{title}}</a></li>
+    <li {{#active}}class="active"{{/active}} id="nav-{{href}}"><a href="#{{href}}">{{title}}</a></li>
     {{/links}}
   </ul>
   <p class="navbar-text pull-right">Just some stuff about Java, Mac and more.</p>
 </div><!--/.nav-collapse -->
 
-
-<script>
-
-      
-$('.nav li a').click(function(e) {
-  $('.nav li').removeClass('active');
-  var $this = $(this);
-  if (!$this.parent().hasClass('active')) {
-    $this.parent().addClass('active');
-  }
-  
-  var href = $(this).attr('href');
-  
-  $('#main-container').fadeOut('fast', function() {
-  
-    window.location.replace(href);
-    $.get('html/'+href.substring(1)+'.html', function(data) {
-      $('#main-container').html(data);
-      $('#main-container').fadeIn('fast', function() {
-    
-      });  
-    });
-  
-  });  
-  
-  
-  
-  e.preventDefault();
-});
-
-</script>
