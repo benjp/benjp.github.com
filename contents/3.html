@@ -1,0 +1,58 @@
+<h1>How to add Youtube Content in 5 min ?</h1>
+
+<hr/>
+
+Sometimes, as we support mpg, mov, h264 videos in eXo Platform, this question pops up during demos : "Do you support Youtube videos ?"
+And I can only answer we don't have this "Content Type" in the default bundle.
+
+Ok, that's an easy answer, the real question is "Is it hard to support it ?". So, here you go, here is a 5 min tutorial to get Youtube videos in eXo Platform.
+<h2>Download and Launch eXo</h2>
+I encourage you to download Platform 3 to get the full User Experience :
+<a href="http://exoplatform.com/company/en/platform/exo-platform-3">eXo Platform 3</a>
+or you can get eXo WCM Community Version on Source Forge :
+<a href="http://sourceforge.net/projects/exo-wcm/">eXo WCM 2.1</a>
+
+Note that I write my post on the upcoming eXo Platform 3.5 (stay tuned for more info in the next weeks, it's coming)
+
+About the installation, follow the README.txt file, it's well described.
+<h2>Add a new Content Type</h2>
+<h3>Follow my Steps :</h3>
+<blockquote>- Log in using Mary (she has administrative rights in the Content section)
+- Go to Content Administration page
+-- in PLF 3.5, it's in the app menu on the right under Content section.
+- Go to Content Types tabs, then Manage Node Type</blockquote>
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/1-manage-nodetype.jpg"><img class="aligncenter size-large wp-image-40" title="1-manage-nodetype" src="http://paillereau.com/blog/wp-content/uploads/2011/11/1-manage-nodetype-1024x489.jpg" alt="" width="640" height="305" /></a>
+- To save time, I will upload a predefined nodetype definition
+
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/2-import-nodetype.jpg"><img class="aligncenter size-full wp-image-41" title="2-import-nodetype" src="http://paillereau.com/blog/wp-content/uploads/2011/11/2-import-nodetype.jpg" alt="" width="526" height="245" /></a>
+
+Here is the link to the Youtube Video nodetype definition :
+<a href="https://github.com/benjp/exosamples/blob/master/youtube/youtube-nodetype.xml" target="_new">https://github.com/benjp/exosamples/blob/master/youtube/youtube-nodetype.xml</a>
+
+It's a very simple one, the Youtube video key, the player width and height, that's all.
+<h2>Add the dialog template</h2>
+Next we need a dialog to use this nodetype in the Content Explorer
+<h3>Follow my Steps :</h3>
+<blockquote>- In the Content Administation, switch to Content Presentation tab, then Manage Templates
+- Click on "Add" button in the bottom right.
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/3-add-template.jpg"><img class="aligncenter size-full wp-image-48" title="3-add-template" src="http://paillereau.com/blog/wp-content/uploads/2011/11/3-add-template.jpg" alt="" width="775" height="477" /></a>
+- Fill the fields to fit your needs (Label, Permissions, etc)
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/4-template-form.jpg"><img class="aligncenter size-full wp-image-49" title="4-template-form" src="http://paillereau.com/blog/wp-content/uploads/2011/11/4-template-form.jpg" alt="" width="717" height="315" /></a>
+- Add your Dialog template
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/5-dialog-1.jpg"><img class="aligncenter size-full wp-image-50" title="5-dialog-1" src="http://paillereau.com/blog/wp-content/uploads/2011/11/5-dialog-1.jpg" alt="" width="690" height="387" /></a></blockquote>
+The link for the Dialog template : <a href="https://github.com/benjp/exosamples/blob/master/youtube/dialog1.gtmpl" target="_new">https://github.com/benjp/exosamples/blob/master/youtube/dialog1.gtmpl</a>
+<h2>Customize your Youtube view</h2>
+Finally, we need to add the player to show the video in the website
+<h3>Follow my Steps :</h3>
+<blockquote>- In the View tab, customize the View template (example below)
+- Save your template
+- Now, moment of truth, test it !</blockquote>
+Link for the Youtube view template : <a href="https://github.com/benjp/exosamples/blob/master/youtube/view1.gtmpl" target="_new">https://github.com/benjp/exosamples/blob/master/youtube/view1.gtmpl</a>
+<h2>You're done !</h2>
+<h3>You can now add Youtube Videos in eXo Platform :</h3>
+<blockquote>- In the applications menu (in the admin bar), go to the Content Explorer
+- Select "Add Document", then "Youtube Video"
+- You can enter either the youtube key directly or the url to the video. You can check in the view, I wrote it clever enough to work with both.
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/7-view.jpg"><img class="aligncenter size-full wp-image-62" title="7-view" src="http://paillereau.com/blog/wp-content/uploads/2011/11/7-view.jpg" alt="" width="836" height="530" /></a></blockquote>
+<h3>The result</h3>
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/8-done.jpg"><img class="aligncenter size-full wp-image-63" title="8-done" src="http://paillereau.com/blog/wp-content/uploads/2011/11/8-done.jpg" alt="" width="976" height="682" /></a>

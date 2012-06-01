@@ -1,0 +1,49 @@
+<h1>Add QRCode in your Website using Juzu (part 2)</h1>
+
+<hr/>
+
+We saw in the first part of this post how easy it is to create a QRCode portlet using Juzu.
+
+Now, let's finish the job and add a Portlet Preference to configure the QRCode size
+
+<h2>Add your preference</h2>
+<h3>Let's add the Portlet Pref in the portlet.xml file :</h3>
+<pre><code>
+     &lt;portlet-preferences>
+       &lt;preference>
+         &lt;name>size&lt;/name>
+         &lt;value>128&lt;/value>
+         &lt;read-only>false&lt;/read-only>
+       &lt;/preference>
+     &lt;/portlet-preferences>
+</code></pre>
+
+<h2>Get the value in the controller</h2>
+<pre><code>
+...
+   @Inject
+    PortletPreferences portletPreferences;
+...
+   @View
+   public void index() throws IOException
+   {
+      String size = portletPreferences.getValue("size", "128");
+      Map&lt;String, Object> parameters = new HashMap&lt;String, Object>();
+      parameters.put("size", size);
+      indexTemplate.render(parameters);
+   }
+...
+</code></pre>
+
+<h2>Finally, use it in the view template :</h2>
+<pre><code>
+    $('#qrcode_div').qrcode({'width':${size}, 'height':${size}, text: "${url}"});
+</code></pre>
+
+
+<h2>The code is on Github</h2>
+
+Quick and easy.
+
+You can get this simple Juzu portlet here :
+<a target="_new" href="https://github.com/benjp/wcm-qrcode">https://github.com/benjp/wcm-qrcode</a>

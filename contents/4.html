@@ -1,0 +1,106 @@
+<h1>FlipFeed effect tutorial</h1>
+
+<hr/>
+
+
+A few months ago, I did a FlipFeed demo. Now is the time to write a short tutorial to see how to create it on eXo Platform 3.5.
+
+Note that I write my post on the upcoming eXo Platform 3.5 (stay tuned for more info in the next weeks, it's coming)
+
+About the installation, follow the README.txt file, it's well described.
+
+<h2>Add "news" Content Type</h2>
+<h3>Follow my Steps :</h3>
+<blockquote>- Log in using Mary (she has administrative rights in the Content section)
+- Go to Content Administration page
+-- in PLF 3.5, it's in the app menu on the right under Content section.
+- Go to Content Types tabs, then Manage Node Type</blockquote>
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/1-manage-nodetype.jpg" class="thumbnail"><img class="aligncenter size-large wp-image-40" title="1-manage-nodetype" src="http://paillereau.com/blog/wp-content/uploads/2011/11/1-manage-nodetype-1024x489.jpg" alt="" width="640" height="305" /></a>
+- To save time, I will upload a predefined nodetype definition
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-1.jpg" target="_new" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-1-300x147.jpg" alt="" title="flipfeed-1" width="300" height="147" class="alignnone size-medium wp-image-83" /></a>
+</blockquote>
+
+Here is the link to the News nodetype definition :
+<a href="https://github.com/benjp/exosamples/blob/master/flipfeed/news-nodetype.xml" target="_new">https://github.com/benjp/exosamples/blob/master/flipfeed/news-nodetype.xml</a>
+
+It's a sample news content. The idea on this content type is to use an image that will be used in the FlipFeed effect.
+
+
+<h2>Add the dialog template</h2>
+Next we need a dialog to use this nodetype in the Content Explorer
+<h3>Follow my Steps :</h3>
+<blockquote>- In the Content Administation, switch to Content Presentation tab, then Manage Templates
+- Click on "Add" button in the bottom right.
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/3-add-template.jpg" class="thumbnail"><img class="aligncenter size-full wp-image-48" title="3-add-template" src="http://paillereau.com/blog/wp-content/uploads/2011/11/3-add-template.jpg" alt="" width="775" height="477" /></a>
+- Fill the fields to fit your needs (Label, Permissions, etc)
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-2.jpg" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-2-300x122.jpg" alt="" title="flipfeed-2" width="300" height="122" class="alignnone size-medium wp-image-84" /></a>
+- Add your Dialog template
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/5-dialog-1.jpg" class="thumbnail"><img class="aligncenter size-full wp-image-50" title="5-dialog-1" src="http://paillereau.com/blog/wp-content/uploads/2011/11/5-dialog-1.jpg" alt="" width="690" height="387" /></a></blockquote>
+The link for the Dialog template : <a href="https://github.com/benjp/exosamples/blob/master/flipfeed/dialog1.gtmpl" target="_new">https://github.com/benjp/exosamples/blob/master/flipfeed/dialog1.gtmpl</a>
+
+
+<h2>Add a default view</h2>
+Finally, we need to add a default view to see this news in the website.
+<h3>Follow my Steps :</h3>
+<blockquote>- In the View tab, customize the View template (example below)
+- Save your template
+- Now, moment of truth, test it !</blockquote>
+Link for the News view template : <a href="https://github.com/benjp/exosamples/blob/master/flipfeed/view1.gtmpl" target="_new">https://github.com/benjp/exosamples/blob/master/flipfeed/view1.gtmpl</a>
+</blockquote>
+
+
+
+<h2>Create a news</h2>
+
+<h3>Just to test everything is okay :</h3>
+<blockquote>- In the applications menu (in the admin bar), go to the Content Explorer
+- Select "Add Document", then "News", fill the fields
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-3.jpg" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-3-300x202.jpg" alt="" title="flipfeed-3" width="300" height="202" class="alignnone size-medium wp-image-85" /></a>
+- Save, you should see something like this
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-4.jpg" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-4-300x160.jpg" alt="" title="flipfeed-4" width="300" height="160" class="alignnone size-medium wp-image-86" /></a>
+</blockquote>
+
+
+<h2>Import News sample set</h2>
+
+<h3>Follow my Steps :</h3>
+<blockquote>
+- Login as John and open Content Administration app
+- Go to > Content Presentation > Manage View
+- Edit "admin-view"
+- Click on Admin tab
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-5.jpg" target="_new" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-5-1024x424.jpg" alt="" title="flipfeed-5" width="584" height="241" class="alignnone size-large wp-image-91" /></a>
+- Add "Import Node" action, then save
+- Open Content Explorer app
+- select "collaboration" drive, then click on Import Node action
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-6.jpg" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-6-1024x412.jpg" alt="" title="flipfeed-6" width="584" height="234" class="alignnone size-large wp-image-94" /></a>
+</blockquote>
+
+
+<h2>Install the FlipFeed template</h2>
+<h3>Follow my Steps :</h3>
+<blockquote>
+- Open IDE app
+- In the menu, select > Window > Select workspace..., then dms-system workspace
+- Open in the left tree > dms-system > exo:ecm > views > templates > content-list-viewer > list
+- Create a new template (menu > File > Open Local File...)
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-7.jpg" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-7-1024x676.jpg" alt="" title="flipfeed-7" width="584" height="385" class="alignnone size-large wp-image-102" /></a>
+</blockquote>
+The link for this template : <a href="https://github.com/benjp/exosamples/blob/master/flipfeed/FlipFeed.gtmpl" target="_new">https://github.com/benjp/exosamples/blob/master/flipfeed/FlipFeed.gtmpl</a>
+
+<h2>Create the FlipFeed page</h2>
+<h3>Follow my Steps :</h3>
+<blockquote>
+- Go to Acme website and create a new page (Admin bar > Page > Add New Page)
+- Give a name and title then go to the layout
+- Add a Content List app
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-8.jpg" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-8-1024x486.jpg" alt="" title="flipfeed-8" width="584" height="277" class="alignnone size-large wp-image-104" /></a>
+- Edit the Content List configuration :
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-9.jpg" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-9.jpg" alt="" title="flipfeed-9" width="793" height="487" class="alignnone size-full wp-image-105" /></a>
+</blockquote>
+
+<h2>Final result</h2>
+
+You should finally see something like this :
+
+<a href="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-10.jpg" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2011/11/flipfeed-10.jpg" alt="" title="flipfeed-10" width="978" height="806" class="alignnone size-full wp-image-106" /></a>

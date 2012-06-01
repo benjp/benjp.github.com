@@ -1,0 +1,47 @@
+<h1>FlipBoard effect in eXo WCM</h1>
+
+<hr/>
+
+<h2>Easy way to add a FlipBoard like effect in eXo WCM using Thumbnail Rest service.</h2>
+In this video, I will show you how to :
+<ul>
+	<li>Create cropped images</li>
+	<li>Add a new page template to create the FlipBoard effect</li>
+</ul>
+<h3>Create Cropped Images</h3>
+That's actually easy to do in eXo WCM. Since WCM 2.2+ (the current trunk), we have a new REST service to create custom thumbnails.
+If you take this image in the Content Repository :
+<code>http://localhost:8080/ecmdemo/rest-ecmdemo/jcr/repository/collaboration/Pictures/giraffe.jpg
+</code>
+This "giraffe.jpg" image is stored in the Collaboration workspace under the Pictures folder.
+The upper link is the webdav access (using a REST service btw) to display this image.
+<em>Side note</em> : If it's a pdf file, this service will allow you to download it.
+
+Now if you want a small thumbnail of this image, call this service
+<code>http://localhost:8080/ecmdemo/rest-ecmdemo/thumbnailImage/small/repository/collaboration/Pictures/giraffe.jpg
+</code>
+
+The thumbnailImage REST service allows you to create different sizes :
+<ul>
+	<li>small</li>
+	<li>medium</li>
+	<li>large</li>
+	<li>custom</li>
+</ul>
+In WCM 2.2+, the new one is "custom". By calling it, you can create all kind of cropped images of your original image and that's exactly the effect we want for the FlipBoard layout.
+So, just call :
+<code>http://localhost:8080/ecmdemo/rest-ecmdemo/thumbnailImage/custom/640x0/repository/collaboration/Pictures/giraffe.jpg
+</code>
+It will create a thumbnail with a 640px width (0 is used to ignore the height and keep the original proportion).
+Add a height of 100px, like this :
+<code>http://localhost:8080/ecmdemo/rest-ecmdemo/thumbnailImage/custom/640x100/repository/collaboration/Pictures/giraffe.jpg
+</code>
+You just created a banner that is a centered cropped image. It means it's not distorted and it's exactly what we want.
+<h3>New template to create the Flipboard effect</h3>
+There's not much to say here, I created a Content List template that will adapt the content to the page and organize them to fit perfectly in the layout. So, it's just playing with the title, summary and images sizes.
+
+The better now is to watch the video if you want to see the result... and some tips and tricks about how I use the product.
+
+<iframe src="http://player.vimeo.com/video/21117724" frameborder="0" width="400" height="355"></iframe>
+
+<a href="http://vimeo.com/21117724">Flip Feed in WCM</a> from <a href="http://vimeo.com/user1241097">Benjamin Paillereau</a> on <a href="http://vimeo.com">Vimeo</a>.

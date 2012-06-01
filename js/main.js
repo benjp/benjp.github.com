@@ -35,7 +35,8 @@ $.address.change(function(event){
   var anchor = event.value.substring(1);
   if (anchor=="") anchor = "index";
   if (anchor.startsWith('article')) {
-    $.get('contents/1.html', function(data) {
+    var id = anchor.substring(anchor.indexOf("_")+1);
+    $.get('contents/'+id+'.html', function(data) {
       $('#main-container').html(data);
     });      
   }

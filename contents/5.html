@@ -1,0 +1,78 @@
+<h1>Add QRCode in your Website using Juzu</h1>
+
+<hr/>
+
+Before going further in this post, I want to thank Julien. Thanks to Juzu Web Framework for portlet and portal, I can now create portlets the quick way, and it's important because I have time to test and develop things but not a LOT of time.
+
+So, if you want more info about Juzu, you can go on Github :
+<a target="_new" href="https://github.com/juzu/juzu">https://github.com/juzu/juzu</a>
+
+This post is about two things :
+- Showing how easy it is to create a portlet using Juzu (I hope Julien won't be upset about my way of taking it :-) )
+- Adding QRCode in your website.
+
+<h2>About QRCode</h2>
+I won't go into all the detail about the QRCode interest, if you want more info, go to wikipedia.
+<a target="_new" href="http://en.wikipedia.org/wiki/QR_code">http://en.wikipedia.org/wiki/QR_code</a>
+
+Now, if you want to integrate it in your website, there's the server way (by generating the QRCode image on server side), and there's the "lazy" way (using javascript on client side). I prefer the second way for now because I want to test Juzu more than I want to integrate QRCode in a final product. I'll go maybe later in the server side mode to go further in the controller process in Juzu... or I'll take another use case.
+I used a QRCode JS library developed as a jQuery plugin :
+<a target="_new" href="http://jeromeetienne.github.com/jquery-qrcode/">http://jeromeetienne.github.com/jquery-qrcode/</a>
+
+Firstly, I started with a gadget :
+<a target="_new" href="https://github.com/benjp/exosamples/tree/master/gadgets/qrcode-project">https://github.com/benjp/exosamples/tree/master/gadgets/qrcode-project</a>
+
+But, as gadgets are embedded in IFrame, I was not happy about the reactivity of this choice. I mean, you show the page and you have a glitch to show the QRCode, I found this "unpleasant" to watch.
+
+So, I decided to go on the portlet way.
+
+<h2>About Juzu</h2>
+
+Again, you can go on Github to learn more about Juzu, I won't explain it, Julien does it better than me.
+But I can say one thing : 
+<b>From scratch to first deploy of the QRCode portlet in eXo Platform, it took me 15 minutes (including forking in my GitHub)</b>
+That's the only important thing to my eyes.
+
+<h2>Create your project</h2>
+<h3>Follow my Steps :</h3>
+<blockquote>
+- you can either start from scratch or fork a sample project created by Julien
+- I chose the second option
+-- Forking to <a target="_new" href="https://github.com/benjp/wcm-qrcode">https://github.com/benjp/wcm-qrcode</a>
+-- Then, cleaning and preparing the qrcode portlet structure
+</blockquote>
+
+At this step, after the <a target="_new" href="https://github.com/benjp/wcm-qrcode/commit/f9dab99883d97084fc8ab0d3f7c8016ebf54818c">initial commit</a>, you can start to play.
+
+<h2>Add QRCode library</h2>
+Easy step, you take the js library and integrate it in the portlet filter.
+in <a target="_new" href="https://github.com/benjp/wcm-qrcode/blob/master/src/main/java/org/gatein/portal/qrcode/portlet/ResponseFilter.java">ResponseFilter</a>
+<pre><code>Element jqq = response.createElement("script");
+jqq.setAttribute("type", "text/javascript");
+jqq.setAttribute("src", request.getContextPath() + "/js/jquery.qrcode.min.js");
+response.addProperty(MimeResponse.MARKUP_HEAD_ELEMENT, jqq);
+</code></pre>
+
+in our <a target="_new" href="https://github.com/benjp/wcm-qrcode/blob/master/src/main/java/org/gatein/portal/qrcode/templates/index.gtmpl">index.gtmpl</a> :
+<pre><code>&lt;div id="qrcode_div"&gt;&lt;/div>
+&lt;script>
+      $('#qrcode_div').qrcode("this is a test");
+&lt;/script>
+</code></pre>
+
+<h2>Getting the url</h2>
+in our <a target="_new" href="https://github.com/benjp/wcm-qrcode/blob/master/src/main/java/org/gatein/portal/qrcode/templates/index.gtmpl">index.gtmpl</a> :
+<pre><code>
+var url = document.URL;
+$('#qrcode_div').qrcode({'width':100, 'height':100, text: url});
+$('canvas').css({'margin-left': 'auto', 'margin-right': 'auto', 'display': 'block', 'background-color': '#FFF', 'padding': '10px'});
+</code></pre>
+
+<h2>Final Result</h2>
+
+<a target="_new" href="http://paillereau.com/blog/wp-content/uploads/2012/03/qrcode-portlet.jpg"><img src="http://paillereau.com/blog/wp-content/uploads/2012/03/qrcode-portlet.jpg" alt="" title="qrcode-portlet" width="495" height="338" class="alignnone size-full wp-image-145" /></a>
+
+<h2>Next Step</h2>
+
+The next step will be to be able to change the QRCode size using a portlet preference.
+We will see that in another post.

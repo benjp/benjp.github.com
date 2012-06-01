@@ -1,0 +1,55 @@
+<h1>How to "automator" your desktop for demos</h1>
+
+<hr/>
+
+If like me you do a lot of demos, you probably know that we can't usually do a professional demo with any background like this one :
+
+<a href="http://patenteux.com/Messy_desktop/messy_wallpaper-1280x768.jpg" class="thumbnail">
+  <img alt="" src="http://patenteux.com/Messy_desktop/messy_wallpaper-1280x768.jpg" title="Messy Wallpaper" class="aligncenter" width="512" />
+</a>
+
+
+You can have a messy background but you may prefer to show your brand instead of your personal interests. By the way, you can find this messy background here : <a href="http://patenteux.com/Messy_desktop" target="_new">http://patenteux.com/Messy_desktop</a>
+
+The thing is I become really lazy when it comes to do the same thing again and again. Thus, when it's possible, I tend to automatize the thing so it won't be so painful. And switching from a desktop background before a demo and switching back to MY desktop background at the end of the demo is some kind of a painful task.
+
+Thanks to Automator on Max OS X, you can automatize a lot of things, I will cover just this one but if you did some in the past, feel free to share.
+
+So, the idea here is to :
+- switch from one Desktop background to another before and after a demo
+- hide your icons and personal stuff from your Desktop
+
+<hr/>
+<h2>The Automator application</h2>
+
+Just launch Automator and choose Application
+
+<h3>Step 1 : Get Specified Finder Items</h3>
+
+Select the "Get Specified Finder Items" action and select a background you want on your desktop
+
+<a href="http://paillereau.com/blog/wp-content/uploads/2012/04/Capture-d’écran-2012-04-24-à-14.10.11.png" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2012/04/Capture-d’écran-2012-04-24-à-14.10.11.png" alt="" title="AutomatorStep1" width="599" height="309" class="aligncenter size-full wp-image-166" /></a>
+
+<h3>Step 2 : Set Desktop Picture</h3>
+
+Select the "Set Desktop Picture" action to change your Desktop picture.
+
+<a href="http://paillereau.com/blog/wp-content/uploads/2012/04/Capture-d’écran-2012-04-24-à-14.12.15.png" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2012/04/Capture-d’écran-2012-04-24-à-14.12.15.png" alt="" title="AutomatorStep2" width="590" height="93" class="aligncenter size-full wp-image-167" /></a>
+
+<h3>Step 3 : Hide your icons</h3>
+
+Finally, choose the "Run Shell Script" action and enter the following command :
+<pre>
+defaults write com.apple.finder CreateDesktop -bool false
+killall Finder
+</pre>
+
+<a href="http://paillereau.com/blog/wp-content/uploads/2012/04/Capture-d’écran-2012-04-24-à-14.16.09.png" class="thumbnail"><img src="http://paillereau.com/blog/wp-content/uploads/2012/04/Capture-d’écran-2012-04-24-à-14.16.09.png" alt="" title="AutomatorStep3" width="603" height="568" class="aligncenter size-full wp-image-169" /></a>
+
+<hr/>
+<h2>The Opposite</h2>
+
+Create another application that switch back to your favorite background and put again your stuff and you're done !
+
+
+Simple and easy !
