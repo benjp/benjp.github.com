@@ -1,5 +1,6 @@
-{
-  "articles": [
+// Let's put some data here
+
+var articles = TAFFY([
     {
       "id": "8",
       "title": "100% javascript based Personal Blog",
@@ -42,5 +43,5 @@
       "title": "Hello",
       "desc": "Welcome to my blog (I finally decided to get my place to put stuff). You will find here mostly infos or tests about my work in eXo, but also some stuff I do when I don’t think about eXo Content."
     }
-   ]
-}
+   ]);
+   

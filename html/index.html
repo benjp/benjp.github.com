@@ -38,28 +38,20 @@
 
 <script>
 
-  $.getJSON('json/articles.json', function(data) {
-
     // GET MUSTACHE TEMPLATES
     var uneTpl = $('#uneTpl').html();
     var rowTpl = $('#rowTpl').html();
   
     // RENDER THE FIRST ARTICLE
-    var html = Mustache.to_html(uneTpl, data.articles[0]);
+    var html = Mustache.to_html(uneTpl, articles().order('id desc').first());
     $('#indexTpl').html(html);
-    
+
     // RENDER ROW ARTICLES FROM 1 TO 3
-    var tab = $.extend({}, data); // SHALLOW COPY OF DATA
-    tab.articles = tab.articles.slice(1,4);    
-    html = Mustache.to_html(rowTpl, tab);
+    html = Mustache.to_html(rowTpl, {"articles": articles().order('id desc').start(2).limit(3).get()});
     $('#indexRow1Tpl').html(html);
 
     // RENDER ROW ARTICLES FROM 4 TO 6
-    var tab = $.extend({}, data); // SHALLOW COPY OF DATA
-    tab.articles = tab.articles.slice(4,7);    
-    html = Mustache.to_html(rowTpl, tab);
+    html = Mustache.to_html(rowTpl, {"articles": articles().order('id desc').start(5).limit(3).get()});
     $('#indexRow2Tpl').html(html);
-
-  });    
 
 </script>

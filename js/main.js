@@ -21,7 +21,6 @@ $(document).ready(function () {
 });
 
 
-
 if (typeof String.prototype.startsWith != 'function') {
   String.prototype.startsWith = function (str){
     return this.indexOf(str) == 0;
@@ -47,10 +46,6 @@ $.address.change(function(event){
     
     });  
 
-
-/*    $.get('contents/'+id+'.html', function(data) {
-      $('#main-container').html(data);
-    });      */
   }
 
   if (anchor == 'aboutme' || anchor == 'contact' || anchor == 'index' ) {
