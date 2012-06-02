@@ -1,9 +1,4 @@
 $(document).ready(function () {
-  $.getJSON('json/nav-collapse.json', function(data) {
-    var html = Mustache.to_html(navCollapseTpl, data);
-    $('#nav-collapse').html(html);
-  }); 
-  
 
   $('#main-container').html('&nbsp;');
 
