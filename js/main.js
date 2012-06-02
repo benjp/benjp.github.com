@@ -7,17 +7,10 @@ $(document).ready(function () {
 
   $('#main-container').html('&nbsp;');
 
-  
-  $.getJSON('json/sidebar-nav.json', function(data) {
-    var html = Mustache.to_html(sidebarNavTpl, data);
-    $('#sidebar-nav').html(html);
-  });    
-  
-  $.getJSON('json/sidebar-categories.json', function(data) {
-    var html = Mustache.to_html(sidebarNavTpl, data);
-    $('#sidebar-categories').html(html);
-  }); 
-
+  $.get('html/sidebar.html', function(data) {
+  	$('#sidebar-categories').html(data);
+  });
+    
 });
 
 

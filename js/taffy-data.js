@@ -45,3 +45,23 @@ var articles = TAFFY([
     }
    ]);
    
+var links = TAFFY([
+      {"category": 1, "title": "GitHub", "href": "https://github.com/benjp"},
+      {"category": 1, "title": "LinkedIn", "href": "http://www.linkedin.com/profile/view?id=63327682"},
+      {"category": 1, "title": "Run Activity Feed", "href": "http://connect.garmin.com/feed/rss/activities?feedname=Garmin%20Connect%20-%20benjamin.paillereau&owner=benjamin.paillereau"},
+      {"category": 1, "title": "Twitter", "href": "http://www.twitter.com/bpaillereau"},
+      {"category": 1, "title": "Vimeo", "href": "http://www.vimeo.com/user1241097"},
+      {"category": 2, "title": "tugdualgrall.blogspot", "href": "http://tugdualgrall.blogspot.com/"},
+      {"category": 2, "title": "julienviet.com", "href": "http://www.julienviet.com/"},
+      {"category": 3, "title": "eXo", "href": "#eXo"},
+      {"category": 3, "title": "Java", "href": "#Java"},
+      {"category": 3, "title": "Juzu", "href": "#Juzu"}
+	]);
+	
+	
+var categories = TAFFY([
+      {"id": 1, "title": "eXo", "href": "#eXo"},
+      {"id": 2, "title": "Java", "href": "#Java"},
+      {"id": 3, "title": "Juzu", "href": "#Juzu"}
+	]);	
+	
