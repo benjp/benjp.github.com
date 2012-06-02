@@ -9,19 +9,11 @@ $(document).ready(function () {
 });
 
 
-if (typeof String.prototype.startsWith != 'function') {
-  String.prototype.startsWith = function (str){
-    return this.indexOf(str) == 0;
-  };
-}
-
-
-
 $.address.change(function(event){
   $('.nav li').removeClass('active');
   var anchor = event.value.substring(1);
   if (anchor=="") anchor = "index";
-  if (anchor.startsWith('article')) {
+  if (anchor.indexOf('article')==0) {   //eg. anchor.startsWith('article')
     var id = anchor.substring(anchor.indexOf("_")+1);
 
     $('#main-container').fadeOut(100, function() {
