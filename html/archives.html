@@ -1,0 +1,30 @@
+<h1>Archives : <span id="archive-title">test</span></h1>
+
+<hr/>
+
+<div class="row-fluid" id="archivesTpl"></div>
+
+<script id="archTpl" type="text">
+{{#articles}}
+  <h3>{{title}}</h3>
+  <p>{{desc}}</p>
+  <p><a class="btn" href="#article_{{id}}">Read more &raquo;</a></p>
+  <hr/>
+{{/articles}}
+</script>
+
+
+<script>
+
+    // GET MUSTACHE TEMPLATES
+    var archTpl = $('#archTpl').html();
+
+    $("#archive-title").html(curCat);
+    var catId = categories().filter({"title":curCat}).first().id;
+
+    // RENDER ROW ARTICLES
+    html = Mustache.to_html(archTpl, {"articles": articles({"categories": {has: catId}}).get()});
+    $('#archivesTpl').html(html);
+
+
+</script>

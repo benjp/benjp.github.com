@@ -8,40 +8,33 @@ $(document).ready(function () {
     
 });
 
+var curCat;
 
 $.address.change(function(event){
   $('.nav li').removeClass('active');
   var anchor = event.value.substring(1);
   if (anchor=="") anchor = "index";
+  var url = 'html/index.html';
+
   if (anchor.indexOf('article')==0) {   //eg. anchor.startsWith('article')
     var id = anchor.substring(anchor.indexOf("_")+1);
-
-    $('#main-container').fadeOut(100, function() {
-      $.get('contents/'+id+'.html', function(data) {
-        $('#main-container').html(data);
-        $('#main-container').fadeIn(100, function() {
-      
-        });  
-      });
-    
-    });  
-
-  }
-
-  if (anchor == 'aboutme' || anchor == 'contact' || anchor == 'index' ) {
-
+    url = 'contents/'+id+'.html';
+  } else if (anchor.indexOf('category')==0) {   //eg. anchor.startsWith('category')
+    curCat = anchor.substring(anchor.indexOf("_")+1);
+    url = 'html/archives.html';
+  } else if (anchor == 'aboutme' || anchor == 'contact' || anchor == 'index' ) {
     $('#nav-'+anchor).addClass('active');
-
-    $('#main-container').fadeOut(100, function() {
-      $.get('html/'+anchor+'.html', function(data) {
-        $('#main-container').html(data);
-        $('#main-container').fadeIn(100, function() {
-      
-        });  
-      });
-    
-    });  
-    
+    url = 'html/'+anchor+'.html';
   }
+
+
+  $('#main-container').fadeOut(100, function() {
+    $.get(url, function(data) {
+      $('#main-container').html(data);
+      $('#main-container').fadeIn(100, function() {
+      });  
+    });    
+  });  
+
 
 });

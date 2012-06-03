@@ -24,9 +24,9 @@
     // RENDER CATEGORIES
     var html = Mustache.to_html(categoriesMus, {"title": "Categories", "links": categories().get()});
     $('#categories').html(html);
-    var html = Mustache.to_html(categoriesMus, {"title": "My links", "links": links().filter({"category":1}).get()});
+    var html = Mustache.to_html(categoriesMus, {"title": "My links", "links": links().filter({"type":1}).get()});
     $('#mylinks').html(html);
-    var html = Mustache.to_html(categoriesMus, {"title": "Friends", "links": links().filter({"category":2}).get()});
+    var html = Mustache.to_html(categoriesMus, {"title": "Friends", "links": links().filter({"type":2}).get()});
     $('#myfriends').html(html);
 
 </script>
