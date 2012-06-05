@@ -1,4 +1,28 @@
 // Let's put some data here
+	
+var categories = TAFFY([
+      {"id": "1", "title": "eXo", "href": "#category_eXo"},
+      {"id": "2", "title": "Java", "href": "#category_Java"},
+      {"id": "3", "title": "Juzu", "href": "#category_Juzu"},
+      {"id": "4", "title": "WCM", "href": "#category_WCM"},
+      {"id": "5", "title": "HTML5", "href": "#category_HTML5"},
+      {"id": "6", "title": "OSX", "href": "#category_OSX"}
+	]);	
+	
+var tags = TAFFY([
+      {"id": "1", "title": "Dev", "href": "#tag_Dev", "articles": ["6", "5", "3", "2"]},
+      {"id": "2", "title": "effect", "href": "#tag_effect", "articles": ["4", "2"]},
+      {"id": "3", "title": "eXo", "href": "#tag_eXo", "articles": ["5", "4", "3", "2"]},
+      {"id": "4", "title": "FlipBoard", "href": "#tag_FlipBoard", "articles": ["4", "2"]},
+      {"id": "5", "title": "Juzu", "href": "#tag_Juzu", "articles": ["6", "5"]},
+      {"id": "6", "title": "Lazy", "href": "#tag_Lazy", "articles": ["7"]},
+      {"id": "7", "title": "OSX", "href": "#tag_OSX", "articles": ["7"]},
+      {"id": "8", "title": "Template", "href": "#tag_Template", "articles": ["3", "2"]},
+      {"id": "9", "title": "Tutorial", "href": "#tag_Tutorial", "articles": ["6", "4"]},
+      {"id": "10", "title": "video", "href": "#tag_video", "articles": ["3"]},
+      {"id": "11", "title": "WCM", "href": "#tag_WCM", "articles": ["4", "3", "2"]},
+      {"id": "12", "title": "Youtube", "href": "#tag_Youtube", "articles": ["3"]}
+	]);	
 
 var articles = TAFFY([
     {
@@ -60,19 +84,6 @@ var links = TAFFY([
       {"type": 1, "title": "Twitter", "href": "http://www.twitter.com/bpaillereau"},
       {"type": 1, "title": "Vimeo", "href": "http://www.vimeo.com/user1241097"},
       {"type": 2, "title": "tugdualgrall.blogspot", "href": "http://tugdualgrall.blogspot.com/"},
-      {"type": 2, "title": "julienviet.com", "href": "http://www.julienviet.com/"}
+      {"type": 2, "title": "julienviet.com", "href": "http://www.julienviet.com/"},
 	]);
-	
-	
-var categories = TAFFY([
-      {"id": "1", "title": "eXo", "href": "#category_eXo"},
-      {"id": "2", "title": "Java", "href": "#category_Java"},
-      {"id": "3", "title": "Juzu", "href": "#category_Juzu"},
-      {"id": "4", "title": "WCM", "href": "#category_WCM"},
-      {"id": "5", "title": "HTML5", "href": "#category_HTML5"},
-      {"id": "6", "title": "OSX", "href": "#category_OSX"}
-	]);	
-	
-	
-
 	

@@ -1,0 +1,35 @@
+/* provided by http://cssglobe.com/post/4581/tag-clouds-styling-and-adding-sort-options */
+	.tags ul{
+		/*margin:1em 0;
+		padding:.5em 10px;*/
+		margin: 0px;
+		padding-right: 5px;
+		text-align:center;
+		/*background:#71b5e9 url(bg_tags.gif) repeat-x;		*/
+		}
+	.tags li{
+		margin:0;
+		padding:0;
+		list-style:none;
+		display:inline;
+		}
+	.tags li a{
+		text-decoration:none;
+		/*color:#fff;*/
+		color: #08C;
+		padding:0 2px;	
+		}
+	.tags li a:hover{	
+		color:#005580;
+		}		
+	
+	.tag1{font-size:100%;}
+	.tag2{font-size:120%;}
+	.tag3{font-size:140%;}
+	.tag4{font-size:160%;}
+	.tag5{font-size:180%;}
+	
+	/* tweek for bootstrap */
+	.tags li.nav-header {
+	 text-align: left;
+	}

@@ -8,7 +8,7 @@ $(document).ready(function () {
     
 });
 
-var curCat;
+var curCat, curType;
 
 $.address.change(function(event){
   $('.nav li').removeClass('active');
@@ -21,6 +21,11 @@ $.address.change(function(event){
     url = 'contents/'+id+'.html';
   } else if (anchor.indexOf('category')==0) {   //eg. anchor.startsWith('category')
     curCat = anchor.substring(anchor.indexOf("_")+1);
+    curType = "category";
+    url = 'html/archives.html';
+  } else if (anchor.indexOf('tag')==0) {   //eg. anchor.startsWith('tag')
+    curCat = anchor.substring(anchor.indexOf("_")+1);
+    curType = "tag";
     url = 'html/archives.html';
   } else if (anchor == 'aboutme' || anchor == 'contact' || anchor == 'index' ) {
     $('#nav-'+anchor).addClass('active');
@@ -36,5 +41,5 @@ $.address.change(function(event){
     });    
   });  
 
-
+  
 });
