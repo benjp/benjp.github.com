@@ -24,14 +24,19 @@ $.address.change(function(event){
   if (anchor.indexOf('article')===0) {   //eg. anchor.startsWith('article')
     id = anchor.substring(anchor.indexOf("_")+1);
     url = 'contents/'+id+'.html';
-    DISQUS.reset({
-      reload: true,
-      config: function () {
-        this.page.identifier = "article"+id;
-        this.page.url = "http://benjp.github.com/article.html?id="+id;
+
+    $.doTimeout(2000,function() {
+      if (typeof DISQUS != 'undefined') {
+        DISQUS.reset({
+          reload: true,
+          config: function () {
+            this.page.identifier = "article"+id;
+            this.page.url = "http://benjp.github.com/article.html?id="+id;
+          }
+        });
+        $('#disqus_thread').css({"display":"block"});
       }
     });
-    $('#disqus_thread').css({"display":"block"});
 
   } else if (anchor.indexOf('category')===0) {   //eg. anchor.startsWith('category')
     curCat = anchor.substring(anchor.indexOf("_")+1);
