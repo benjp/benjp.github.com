@@ -27,7 +27,7 @@
   </ul>
 	<ul>
     {{#links}}
-		<li class="tag{{articles.length}}"><a href="{{href}}">{{title}}</a></li> 
+		<li class="tag{{weight}}"><a href="{{href}}">{{title}}</a></li> 
 		{{/links}}
 	</ul>
 </div><!--/.well -->		
@@ -40,9 +40,9 @@
     var tagsMus = $('#tagsMus').html();
   
     // RENDER CATEGORIES
-    var html = Mustache.to_html(categoriesMus, {"title": "Categories", "links": categories().get()});
+    var html = Mustache.to_html(categoriesMus, {"title": "Categories", "links": categories({"type":"category"}).get()});
     $('#categories').html(html);
-    var html = Mustache.to_html(tagsMus, {"title": "Tags", "links": tags().get()});
+    var html = Mustache.to_html(tagsMus, {"title": "Tags", "links": categories({"type":"tag"}).get()});
     $('#tags').html(html);
     var html = Mustache.to_html(categoriesMus, {"title": "My links", "links": links().filter({"type":1}).get()});
     $('#mylinks').html(html);

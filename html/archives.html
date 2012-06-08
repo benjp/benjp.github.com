@@ -20,7 +20,7 @@
     var archTpl = $('#archTpl').html();
 
     $("#archive-title").html(curCat);
-    var catId = categories().filter({"title":curCat}).first().id;
+    var catId = categories({"type":curType}).filter({"title":curCat}).first().id;
 
     // RENDER ROW ARTICLES
     html = Mustache.to_html(archTpl, {"articles": articles({"categories": {has: catId}}).get()});

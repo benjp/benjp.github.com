@@ -13,8 +13,6 @@ var tags = TAFFY([
       {"id": "1", "title": "Dev", "href": "#tag_Dev", "articles": ["6", "5", "3", "2"]},
       {"id": "2", "title": "effect", "href": "#tag_effect", "articles": ["4", "2"]},
       {"id": "3", "title": "eXo", "href": "#tag_eXo", "articles": ["5", "4", "3", "2"]},
-      {"id": "4", "title": "FlipBoard", "href": "#tag_FlipBoard", "articles": ["4", "2"]},
-      {"id": "5", "title": "Juzu", "href": "#tag_Juzu", "articles": ["6", "5"]},
       {"id": "6", "title": "Lazy", "href": "#tag_Lazy", "articles": ["7"]},
       {"id": "7", "title": "OSX", "href": "#tag_OSX", "articles": ["7"]},
       {"id": "8", "title": "Template", "href": "#tag_Template", "articles": ["3", "2"]},
