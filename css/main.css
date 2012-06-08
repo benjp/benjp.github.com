@@ -2,13 +2,13 @@
 	.tags ul{
 		/*margin:1em 0;
 		padding:.5em 10px;*/
-		margin: 0px;
+		margin: 0;
 		padding-right: 5px;
 		text-align:center;
 		/*background:#71b5e9 url(bg_tags.gif) repeat-x;		*/
 		}
 	.tags li{
-		margin:0;
+		/*margin:0;*/
 		padding:0;
 		list-style:none;
 		display:inline;
@@ -30,6 +30,6 @@
 	.tag5{font-size:180%;}
 	
 	/* tweek for bootstrap */
-	.tags li.nav-header {
+	.tags .nav-header {
 	 text-align: left;
 	}
