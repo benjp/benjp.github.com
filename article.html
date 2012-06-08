@@ -1,0 +1,17 @@
+<html>
+  <head>
+  </head>
+  <body>
+  	
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery.url.js"></script>
+<script>
+// http://localhost:8888/benjp.github.com/article.html?id=8
+
+var url = $.url();
+window.location.href = "index.html#article_"+url.param("id");
+
+</script>   
+
+  </body>
+</html>
