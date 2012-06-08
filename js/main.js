@@ -16,6 +16,17 @@ var curCat, curType, id;
 $.address.change(function(event){
   $('.nav li').removeClass('active');
   $('#disqus_thread').css({"display":"none"});
+
+  // FRIENDLY SEO URL SUPPORT
+  var burl = $.url();
+  var urlParam = burl.param("_escaped_fragment_");
+  if (typeof urlParam != 'undefined') {
+    if (urlParam.indexOf('article')===0) {
+      id = urlParam.substring(urlParam.indexOf("_")+1);
+      window.location.href = 'contents/'+id+'.html';
+    }
+  }
+  // / FRIENDLY SEO URL SUPPORT
   
   var anchor = event.value.substring(1);
   if (anchor==="") anchor = "index";
