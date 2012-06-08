@@ -7,20 +7,32 @@ $(document).ready(function () {
   });
 
   $('#twtr-widget-1').css({"display":"none"});
+  $('#disqus_thread').css({"display":"none"});
     
 });
 
-var curCat, curType;
+var curCat, curType, id;
 
 $.address.change(function(event){
   $('.nav li').removeClass('active');
+  $('#disqus_thread').css({"display":"none"});
+  
   var anchor = event.value.substring(1);
   if (anchor==="") anchor = "index";
   var url = 'html/index.html';
 
   if (anchor.indexOf('article')===0) {   //eg. anchor.startsWith('article')
-    var id = anchor.substring(anchor.indexOf("_")+1);
+    id = anchor.substring(anchor.indexOf("_")+1);
     url = 'contents/'+id+'.html';
+    DISQUS.reset({
+      reload: true,
+      config: function () {
+        this.page.identifier = "article"+id;
+        this.page.url = "http://benjp.github.com/article.html?id="+id;
+      }
+    });
+    $('#disqus_thread').css({"display":"block"});
+
   } else if (anchor.indexOf('category')===0) {   //eg. anchor.startsWith('category')
     curCat = anchor.substring(anchor.indexOf("_")+1);
     curType = "category";
