@@ -40,15 +40,15 @@
   <body>
   	
   	<!-- FACEBOOK INTEGRATION -->
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-  	<!-- / FACEBOOK INTEGRATION -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- / FACEBOOK INTEGRATION -->
   
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -114,7 +114,36 @@
     <script src="js/bootstrap-transition.js"></script>
     <script src="js/bootstrap-dropdown.js"></script>
     <script src="js/main.js"></script>
+ 
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 10,
+  interval: 30000,
+  width: 250,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#ffffff',
+      color: '#575757'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#4f4f4f',
+      links: '#eb7207'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('bpaillereau').start();
+</script>   
     
-    
+
   </body>
 </html>

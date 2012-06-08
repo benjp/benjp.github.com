@@ -5,6 +5,8 @@ $(document).ready(function () {
   $.get('html/sidebar.html', function(data) {
     $('#sidebar-categories').html(data);
   });
+
+  $('#twtr-widget-1').css({"display":"none"});
     
 });
 
